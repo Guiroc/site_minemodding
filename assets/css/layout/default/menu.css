@@ -1,0 +1,12 @@
+﻿#menu{
+	list-style-type : none;
+	text-align:center;
+	border: 1px solid;
+	margin-top:-24px;
+	margin-bottom: 50px;
+	font-size:20px;
+}
+
+#menu li{
+	display : inline;
+}
