@@ -1,0 +1,28 @@
+#unmod{
+	
+}
+#description{
+	padding: 5px;
+	background-color: rgba(255,255,255,0.7);
+	margin-bottom: 50px
+}
+#lesversions{
+	display: flex;
+}
+.versions{
+	padding: 10px;
+	background-color: rgba(255,255,255,0.7);
+	width: 200px;
+	text-align: center;
+	margin: auto;
+}
+.modversion{
+	border: solid 1px #808080;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.8);
+	margin-top: 10px;
+}
+.modversion + .modversion{
+	
+}

@@ -1,5 +1,9 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html lang="fr">
 	<div id="accueil">
-	 Il y a actuellement <?php echo $nb_modversion; ?> mods.
+	Les Chiffres du site :<br>
+	 - <?php echo $nb_modversion; ?> mods.<br>
+	 - <?php echo $nb_modpackversion; ?> modspacks.<br>
+	 - <?php echo $nb_texturepackversion; ?> texturepacks.
 	</div>
 </html>

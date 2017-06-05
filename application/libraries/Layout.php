@@ -41,12 +41,15 @@ class Layout{
 	public function view($name, $data = array()){
 
 		$this->var['output'] .= $this->CI->load->view($name, $data, true);
+		$this->var['css'][] = css_url('layout/default/'.$this->theme);
+		$this->var['css'][] = css_url($name);
 		$this->CI->load->view('../layout/' . $this->theme, $this->var);
 	}
 	
 	public function views($name, $data = array()){
 		
 		$this->var['output'] .= $this->CI->load->view($name, $data, true);
+		$this->var['css'][] = css_url($name);
 		return $this;
 	}
 	

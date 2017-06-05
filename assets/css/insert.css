@@ -1,0 +1,33 @@
+#js{
+	background-color: white;
+	width: 400px;
+	position: fixed;
+	transform: translate(-50%, -50%);
+ 	top: 50vh;
+ 	left: 50vw;
+ 	padding: 15px;
+ 	border-radius: 5px;
+ 	dispaly: flex;
+ 	flex-direction : column;
+ 	background-color: rgba(255,255,255,0.7);
+ 	box-shadow: 20px 20px 10px rgba(0,0,0,0.4);
+ 	animation-name: example;
+    animation-duration: 3s;
+}
+#js div{
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+	background-color: #55aaff;
+	cursor: pointer;
+}
+#js div + div{
+	margin-top: 25px;
+}
+#js #close{
+	background-color: #ff8080;
+}
+@keyframes example{
+	from{display: none;}
+	to{display: initial;}
+}

@@ -1,0 +1,40 @@
+#content{
+	display: flex;
+}
+#filter{
+	width: 200px;
+	min-width: 200px;
+	padding: 5px;
+	margin-top:-3px;
+}
+#mods{
+	margin: 0 0 0 20px;
+	flex: 1;
+	min-width: 50px;
+	display: flex;
+	flex-direction: column;
+}
+.mod{
+	padding: 5px;
+	background-color: rgba(255,255,255,0.7);
+	font-size:large;
+}
+#mods a + a{
+	margin-top: 10px;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}
+.version{
+	font-size:small;
+}
+.description{
+	display: flex;
+	flex-wrap: flex;
+}
+.description div{
+	margin-left: 10px;
+	margin-righ: 10px;
+}

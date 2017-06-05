@@ -5,40 +5,36 @@ class Mods extends CI_Controller{
 		
 	public function index(){
 		
-		$this->load->model("mod_model");
+		$this->load->model("mods_model");
 		
 		$data = array();
 		
-		$data["liste_mod"] = $this->mod_model->select_All_Mod();
+		$data["liste_mods"] = $this->mods_model->get_All_Mods();
+		
+		foreach($data["liste_mods"] as $unmod){
+			$versions = $this->mods_model->get_Gameversion_Mod($unmod->mod_id);
+			$unmod->versions= "";
+			
+			foreach ($versions as $unversion){
+				$unmod->versions = $unmod->versions.$unversion->gameversion_label.", ";
+			}
+			$unmod->versions = substr($unmod->versions, 0, -2);
+			$unmod->date = $this->mods_model->get_Recent_Date_Modversion($unmod->mod_id)[0]->modversion_date;
+		}
+		
 		//var_dump($data["liste_mod"]);
 		
-		$this->layout->ajouter_css("layout/default/header");
-		$this->layout->ajouter_css("layout/default/menu");
-		$this->layout->ajouter_css("layout/default/default");
-		$this->layout->ajouter_css("liste_mod");
-		
-		$this->layout->views("layout/header")
-		->views("layout/menu")
-		->view("liste_mod", $data);
+		$this->layout->view("mods", $data);
 	}
 	
 	public function unmod($id){
-		$this->load->model("mod_model");
-		$this->load->model("modversion_model");
+		$this->load->model("mods_model");
 		
 		$data = array();
 		
-		$data["unmod"] = $this->mod_model->get_Mod($id);
+		$data["mod"] = $this->mods_model->get_Mod($id)[0];
+		$data["mod"]->modversions = $this->mods_model->get_All_modversion($id);
 		
-		$data["liste_modversion"] = $this->modversion_model->get__Modversion_By_Id($id);
-		
-		$this->layout->ajouter_css("layout/default/header");
-		$this->layout->ajouter_css("layout/default/menu");
-		$this->layout->ajouter_css("layout/default/default");
-		$this->layout->ajouter_css("liste_mod");
-		
-		$this->layout->views("layout/header")
-		->views("layout/menu")
-		->view("unmod", $data);
+		$this->layout->view("mod", $data);
 	}
 }
